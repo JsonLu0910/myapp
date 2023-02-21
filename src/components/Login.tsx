@@ -163,7 +163,7 @@ const Login = () => {
       autoComplete="off"
     >
       <Form.Item
-        label="Name"
+        label="UserName"
         name="name"
         rules={[
           { required: true, message: 'Please input your name!' },
