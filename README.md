@@ -45,3 +45,52 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 Testing for Jenkins
+
+## Deploy React Application in Jenkins
+
+Add new item in Jenkins, and choose the type as Pipeline
+
+In the General section, click on the GitHub Project and paste your github url.
+
+In the Build Triggers section, click on the GitHub hook trigger for GITScm polling.
+
+In the Pipeline section add the following scripts to run the action of deployment
+###
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                git "https://github.com/JsonLu0910/myapp.git"
+                bat "npm install"
+            }
+        }
+       
+         stage('Deliver') {
+            steps {
+                bat "npm run start"
+            }
+        }
+    }
+}
+
+Save it and apply
+## Install Blue Ocean
+
+Go to the manage jenkins and click on the manage jenkins, next search for the node and blue ocean in available plugins.
+
+## Select the node version
+
+Go to the manage jenkins and click on the global tool configuration.
+
+Untick the option of Install automatically.
+
+Go to your pc and search for the file path of nodejs
+
+Next copy the file path and paste it in the field of Installation directory.
+
+Click on apply and save. 
+
+
+
