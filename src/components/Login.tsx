@@ -176,7 +176,7 @@ const Login = () => {
         <Input />
       </Form.Item>
       {/* <Form.Item
-        label="Password"
+        label="Passwor"
         name="password"
         rules={[
           { required: true, message: 'Please input your password!' }]}
